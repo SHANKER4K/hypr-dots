@@ -1,0 +1,10 @@
+# Ignore everything by default — only track what we explicitly want
+/*
+!/hypr/
+!/waybar/
+!/mako/
+
+!/README.md
+
+# Generated scheme copy (hyprland.conf copies default.conf -> current.conf)
+/hypr/scheme/current.conf

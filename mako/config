@@ -1,0 +1,80 @@
+# Mako config — Notification daemon for Hyprland
+# Theme: Material You (matches scheme/current.conf)
+
+# ---- History ----
+max-history=20
+sort=-time
+
+# ---- Layout ----
+max-visible=5
+anchor=bottom-right
+
+# ---- Actions ----
+on-button-left=none
+on-button-right=dismiss
+on-button-middle=dismiss-all
+on-touch=dismiss
+
+# ---- Dimensions ----
+outer-margin=12
+margin=12
+padding=16
+border-size=2
+border-radius=0
+width=360
+height=180
+default-timeout=6000
+ignore-timeout=1
+
+# ---- Grouping ----
+group-by=summary
+
+# ---- Font ----
+font=monospace 10
+
+# ---- Icons ----
+icons=1
+max-icon-size=32
+icon-location=left
+
+# ---- Markup ----
+markup=1
+
+# ---- Default Colors (Material You from scheme/current.conf) ----
+# Surface Container:    #1F1F23
+# On Surface:           #E5E1E7
+# Outline:              #46464F
+# Primary:              #BFC1FF
+
+background-color=#1F1F23
+text-color=#E5E1E7
+border-color=#353438
+progress-color=over #BFC1FF
+
+# ---- Low Urgency — subtle, muted ----
+# Surface Container Low: #1B1B1F
+# On Surface Variant:    #C7C5D1 (muted)
+# Outline (dim):         #353438
+
+[urgency=low]
+background-color=#1B1B1F
+text-color=#918F9A
+border-color=#353438
+default-timeout=4000
+
+# ---- Normal Urgency — standard ----
+[urgency=normal]
+background-color=#1F1F23
+text-color=#E5E1E7
+border-color=#46464F
+default-timeout=6000
+
+# ---- Critical Urgency — demands attention ----
+# Surface Container High: #2A292E
+# Error:                  #FFB4AB (red)
+
+[urgency=critical]
+background-color=#2A292E
+text-color=#E5E1E7
+border-color=#FFB4AB
+default-timeout=15000
