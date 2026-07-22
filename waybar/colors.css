@@ -1,0 +1,30 @@
+/* Color palette derived from wallpaper:
+ *   Vibrant red/orange waves, teal blue, magenta, light gray
+ *
+ * To regenerate with wallust, add to wallust.toml:
+ *   waybar = { src = "waybar-colors.css", dst = "~/.config/waybar/colors.css" }
+ *
+ * Then import in style.css:
+ *   @import url("colors.css");
+ */
+
+@define-color cursor #E0E4EC;
+@define-color background #141929;
+@define-color foreground #E0E4EC;
+
+@define-color color0  #2A2E3D;    /* dark base */
+@define-color color1  #E8364F;    /* vibrant red (primary accent) */
+@define-color color2  #F28A2E;    /* orange */
+@define-color color3  #F9C846;    /* warm yellow */
+@define-color color4  #3A7CA5;    /* teal blue */
+@define-color color5  #A8245E;    /* magenta / berry */
+@define-color color6  #5EC4D4;    /* cyan */
+@define-color color7  #C8CCD4;    /* light gray */
+@define-color color8  #4A4E5D;    /* mid gray */
+@define-color color9  #FF4D63;    /* bright red */
+@define-color color10 #FFAA44;    /* bright orange */
+@define-color color11 #FFD866;    /* bright yellow */
+@define-color color12 #4A9CC5;    /* bright blue */
+@define-color color13 #C43878;    /* bright magenta */
+@define-color color14 #7ED4E0;    /* bright cyan */
+@define-color color15 #D8DCE4;    /* near-white */
