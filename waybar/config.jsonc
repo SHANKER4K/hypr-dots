@@ -19,6 +19,7 @@
   ],
   "modules-right": [
     "custom/notification",
+    "custom/health",
     "pulseaudio",
     "cpu",
     "memory",
@@ -32,8 +33,8 @@
   "hyprland/workspaces": {
     "all-outputs": true,
     "warp-on-scroll": true,
-    "on-scroll-up": "hyprctl dispatch workspace +1",
-    "on-scroll-down": "hyprctl dispatch workspace -1",
+    "on-scroll-up": "hyprctl dispatch \"hl.dsp.focus({workspace = '+1'})\"",
+    "on-scroll-down": "hyprctl dispatch \"hl.dsp.focus({workspace = '-1'})\"",
     "format": "{icon}",
     "persistent-workspaces": {
       "1": [],
@@ -84,6 +85,13 @@
     "format": "{}",
     "tooltip": true,
     "on-click": "$HOME/.config/hypr/scripts/notification.fish dnd"
+  },
+  "custom/health": {
+    "exec": "$HOME/.config/waybar/scripts/health.sh",
+    "return-type": "json",
+    "interval": 5,
+    "tooltip": true,
+    "on-click": "$HOME/.config/waybar/scripts/health-toggle.sh"
   },
   "custom/network": {
     "exec": "$HOME/.config/waybar/scripts/network.sh",
@@ -160,7 +168,7 @@
     "menu": "on-click",
     "menu-file": "$HOME/.config/waybar/custom_modules/power_menu.xml",
     "menu-actions": {
-      "logout": "hyprctl dispatch exit",
+      "logout": "hyprctl dispatch \"hl.dsp.exit()\"",
       "shutdown": "shutdown",
       "reboot": "reboot",
       "suspend": "systemctl suspend",
