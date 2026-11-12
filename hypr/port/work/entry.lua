@@ -51,12 +51,12 @@ require("hyprland.scrolling")
 require("hypr-user")
 
 -- exec = hyprctl hyprsunset temperature 4000  # now passed via --temperature on exec-once
+-- wallpaper handled by caelestia shell (Background module)
 
 hl.on("hyprland.start", function()
     hl.exec_cmd("Telegram")
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=Hyprland")
     hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-    hl.exec_cmd("hyprpaper")
 end)
 
 hl.on("config.reloaded", function()

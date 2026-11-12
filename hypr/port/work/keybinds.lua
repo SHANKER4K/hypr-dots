@@ -151,8 +151,7 @@ hl.bind("SUPER + M", hl.dsp.exec_cmd("caelestia toggle music"))
 hl.bind("SUPER + D", hl.dsp.exec_cmd("caelestia toggle communication"))
 hl.bind("Ctrl+Super + R", hl.dsp.exec_cmd("caelestia toggle todo"))
 
--- Toggle Waybar visibility (auto-hide toggle manual)
-hl.bind("SUPER + B", hl.dsp.exec_cmd("~/.config/waybar/toggle.sh"))
+-- (waybar retired; bar handled by caelestia shell)
 
 -- Apps
 hl.bind("SUPER + Return", hl.dsp.exec_cmd("app2unit -- kitty fish"))
@@ -193,13 +192,21 @@ hl.bind("Super+Alt + V", hl.dsp.exec_cmd("cliphist list | fuzzel --dmenu --promp
 hl.bind("SUPER + Period", hl.dsp.exec_cmd("~/.config/hypr/scripts/fuzzel-emoji.sh copy"))
 hl.bind("Ctrl+Shift+Alt + V", hl.dsp.exec_cmd("sleep 0.5s && ydotool type -d 1 \"$(cliphist list | head -1 | cliphist decode)\""), { locked = true })
 
--- Notification control
-hl.bind("Super+Shift + N", hl.dsp.exec_cmd("~/.config/hypr/scripts/notification.fish dnd"))
-hl.bind("Super+Alt + N", hl.dsp.exec_cmd("~/.config/hypr/scripts/notification.fish focus"))
-hl.bind("SUPER + N", hl.dsp.exec_cmd("~/.config/hypr/scripts/notification.fish history"))
+-- Notification control (caelestia shell)
+hl.bind("Super+Shift + N", hl.dsp.exec_cmd("qs -c caelestia ipc call notifs toggleDnd"))
+hl.bind("SUPER + N", hl.dsp.exec_cmd("qs -c caelestia ipc call drawers toggle sidebar"))
+
+-- Health breaks (20-20 / 30-5)
+hl.bind("Super+Shift + H", hl.dsp.exec_cmd("~/.config/hypr/scripts/health-toggle.sh"))
+
+-- Prayer times
+hl.bind("Super+Shift + P", hl.dsp.exec_cmd("~/.config/waybar/scripts/prayer.sh menu"))
+hl.bind("Super+Shift+Alt + P", hl.dsp.exec_cmd("hyprlock -c ~/.config/hypr/prayer-lock.conf"))
+
+-- Caelestia launcher (wallpaper/scheme via '>wallpaper' '>scheme')
+hl.bind("Super+Shift + A", hl.dsp.global("caelestia:launcher"))
 
 -- Testing
 hl.bind("Super+Alt + f12", hl.dsp.exec_cmd("notify-send -u low -i dialog-information-symbolic 'Test notification' \"Here's a really long message to test truncation and wrapping\\nYou can middle click or flick this notification to dismiss it!\" -a 'Shell' -A \"Test1=I got it!\" -A \"Test2=Another action\""), { locked = true })
 
--- wallpaper-select
-hl.bind("SUPER + SHIFT + W", hl.dsp.exec_cmd("quickshell -p ~/.config/hypr/qs-wallpaper-picker/Main.qml"))
+-- wallpaper-select (caelestia launcher's >wallpaper is the nicer option)

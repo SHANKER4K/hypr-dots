@@ -2,7 +2,7 @@
 # Wallpaper Selector — uses fuzzel + caelestia
 # Shows wallpaper list, lets you pick one, applies it
 
-set WALLPAPER_DIR $HOME/.local/share/backgrounds
+set WALLPAPER_DIR $HOME/Pictures/wallpapers
 
 # Find all image files in wallpaper directory
 set files (find "$WALLPAPER_DIR" -maxdepth 1 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" -o -iname "*.bmp" \) | sort)

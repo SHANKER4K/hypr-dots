@@ -23,5 +23,4 @@ hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 hl.env("_JAVA_AWT_WM_NONREPARENTING", "1")
 
 -- ########## Performance tweaks ##########
--- Lighter Qt Quick render loop (less overhead)
-hl.env("QSG_RENDER_LOOP", "basic")
+-- (caelestia sets QSG_RENDER_LOOP=threaded itself)

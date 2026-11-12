@@ -14,20 +14,20 @@ local workspaceSwipeFingers = 4
 local gestureFingers = 3
 local gestureFingersMore = 4
 
--- Blur (disabled for performance on old GPU)
-local blurEnabled = false
+-- Blur (RX 570, caelestia defaults)
+local blurEnabled = true
 local blurSpecialWs = false
-local blurPopups = false
-local blurInputMethods = false
-local blurSize = 4
-local blurPasses = 1
+local blurPopups = true
+local blurInputMethods = true
+local blurSize = 8
+local blurPasses = 2
 local blurXray = false
 
--- Shadow (disabled for performance)
-local shadowEnabled = false
-local shadowRange = 10
-local shadowRenderPower = 1
-local shadowColour = "rgba(131317d4)"
+-- Shadow (RX 570, caelestia defaults)
+local shadowEnabled = true
+local shadowRange = 15
+local shadowRenderPower = 4
+local shadowColour = "rgba(59599210)"
 
 -- Gaps
 local workspaceGaps = 10
@@ -36,8 +36,9 @@ local windowGapsOut = 5
 local singleWindowGapsOut = 10
 
 -- Window styling
-local windowOpacity = 1.0
-local windowRounding = 0
+local windowOpacity = 0.95
+local windowRounding = 15
+local windowRoundingPower = 2
 
 local windowBorderSize = 1
 local activeWindowBorderColour = "rgba(c2c1ffe6)"

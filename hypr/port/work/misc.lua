@@ -2,7 +2,7 @@
 
 hl.config({
     misc = {
-        vrr = 1,
+        vrr = 0,
         animate_manual_resizes = false,
         animate_mouse_windowdragging = false,
         disable_hyprland_logo = true,
