@@ -94,7 +94,8 @@ trap toggle SIGUSR1
 # ---- Lock Helpers ----
 
 start_lock() {
-    hyprlock -c "$LOCK_CONFIG" &>/dev/null &
+    local conf="${1:-$LOCK_CONFIG}"
+    hyprlock -c "$conf" &>/dev/null &
     echo $!
 }
 
@@ -188,6 +189,7 @@ wait_lock_clear() {
 
 take_break() {
     local DURATION=$1 TITLE=$2 SUBTITLE=$3
+    local LOCK_CONF="${4:-$LOCK_CONFIG}"
     ABORT_BREAK=false
     log "INFO" "=== ${TITLE} ==="
 
@@ -211,7 +213,7 @@ take_break() {
     # 4. Lock screen (only our own hyprlock instance is ever signalled)
     if command -v hyprlock &>/dev/null && wait_lock_clear; then
         log "INFO" "Locking screen for ${DURATION}s"
-        LOCK_PID=$(start_lock)
+        LOCK_PID=$(start_lock "$LOCK_CONF")
         local end=$((SECONDS + DURATION))
         while [[ $SECONDS -lt $end ]] && ! $ABORT_BREAK; do nap 1; done
 
@@ -282,7 +284,7 @@ main() {
             log "INFO" "Active: eye $((EYE_SECONDS / 60))m | walk $((WALK_SECONDS / 60))m"
 
         if [[ "$WALK_SECONDS" -ge "$WALK_INTERVAL" ]]; then
-            take_break "$WALK_DURATION" "🚶 وقت المشي" "انهض وامشِ لمدة 5 دقائق"
+            take_break "$WALK_DURATION" "🚶 وقت المشي" "انهض وامشِ لمدة 5 دقائق" "$HOME/.config/hypr/walk-break-lock.conf"
             WALK_SECONDS=0
             nap 2
         elif [[ "$EYE_SECONDS" -ge "$BREAK_INTERVAL" ]]; then
