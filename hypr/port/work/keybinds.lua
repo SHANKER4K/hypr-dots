@@ -197,7 +197,7 @@ hl.bind("Super+Shift + N", hl.dsp.exec_cmd("qs -c caelestia ipc call notifs togg
 hl.bind("SUPER + N", hl.dsp.exec_cmd("qs -c caelestia ipc call drawers toggle sidebar"))
 
 -- Health breaks (20-20 / 30-5)
-hl.bind("Super+Shift + H", hl.dsp.exec_cmd("~/.config/hypr/scripts/health-toggle.sh"))
+hl.bind("Super+Shift + H", hl.dsp.exec_cmd("~/.config/waybar/scripts/health-toggle.sh"))
 
 -- Prayer times
 hl.bind("Super+Shift + P", hl.dsp.exec_cmd("~/.config/waybar/scripts/prayer.sh menu"))
